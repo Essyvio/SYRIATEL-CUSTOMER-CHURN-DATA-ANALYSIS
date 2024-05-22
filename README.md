@@ -27,24 +27,24 @@ The dataset obtained from Kaggle contains 3333 entries and 21 columns, including
 The following libraries were imported.
 
 # Importing libraries.
-import pandas as pd
-import numpy as np
-import seaborn as sns
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
-from sklearn.pipeline import Pipeline
-from sklearn.compose import ColumnTransformer
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, roc_curve, roc_auc_score
-from sklearn.linear_model import LogisticRegression
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report, confusion_matrix
-from imblearn.over_sampling import RandomOverSampler
-from imblearn.over_sampling import SMOTE
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
-from matplotlib import pyplot as plt
-%matplotlib inline
+- import pandas as pd
+- import numpy as np
+- import seaborn as sns
+- from sklearn.model_selection import train_test_split
+- from sklearn.preprocessing import StandardScaler, OneHotEncoder
+- from sklearn.pipeline import Pipeline
+- from sklearn.compose import ColumnTransformer
+- from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, roc_curve, roc_auc_score
+- from sklearn.linear_model import LogisticRegression
+- from sklearn.neighbors import KNeighborsClassifier
+ -from sklearn.tree import DecisionTreeClassifier
+- from sklearn.ensemble import RandomForestClassifier
+- from sklearn.metrics import classification_report, confusion_matrix
+- from imblearn.over_sampling import RandomOverSampler
+- from imblearn.over_sampling import SMOTE
+- from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+- from matplotlib import pyplot as plt
+- %matplotlib inline
 
 # Problem statement
 This is a binary classification problem where the target variable is whether a customer churns or not.SyriaTel is facing an increasing churn rate,resulting to a comprehensive analysis to highlight the factors contributing to the customer attrition.The business context is focused on reducing losses incurred due to customer churn. By accurately identifying customers at risk of leaving, SyriaTel can implement targeted retention strategies to minimize churn and maximize customer lifetime value.The key question driving this project is whether there are predictable patterns in customer behavior that signal an increased likelihood of churn. By leveraging historical data on customer interactions, demographics, usage patterns, and churn status, the goal is to build a model that can effectively distinguish between customers who are likely to churn and those who are not.
@@ -152,3 +152,13 @@ Churn Prediction: The SVM model performed poorly in churn prediction, with zero 
 
 ## Best Model: Random Forest exhibited the most balanced performance in identifying churn and non-churn cases, with high accuracy, recall, precision, and F1-score.
 Worst Model: SVM failed to effectively predict churn, showing zero performance metrics for churn cases, indicating a lack of predictive power in this context.
+
+# Comparing the ROC AUC Curve
+![image](https://github.com/Essyvio/SYRIATEL-CUSTOMER-CHURN-DATA-ANALYSIS/assets/152212265/88a7e095-3437-4a5b-8fbf-326c8e2d1656)
+
+My analysis also suggests that we can accurately predict customer churn using a machine learning model, with the Random Forest Classifier being the recommended model due to its strong overall performance. In terms of evaluating the impact of customer service calls, international plans, and day and night charges on customer churn, our feature importance values suggest that customer_service_calls is an important predictor of churn, while total_day_charge and total_day_minutes are also important. International plans do not appear to be among the most important features for predicting churn based on our analysis.
+
+In terms of strategic recommendations for SyriaTel, we would suggest using the predictions from the Random Forest Classifier to identify customers who are at high risk of churning and proactively target them with retention efforts. These efforts could include personalized offers or discounts on day charges, improved customer service to address any issues or concerns, or changes to international plans to make them more attractive to customers. By implementing cost-effective strategies that address the key factors driving customer churn, SyriaTel can retain customers and minimize revenue loss.
+
+Overall, our recommendation is for SyriaTel to use the Random Forest Classifier as its primary model for predicting customer churn and to take proactive measures to retain customers who are identified as being at high risk of churning. These measures should be informed by our analysis of the key predictors of customer churn and targeted towards addressing these factors in a cost-effective manner.
+
